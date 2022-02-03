@@ -36,5 +36,11 @@
     text-transform: uppercase;
     font-size: 1.7rem;
     text-align: center;
+    transition: all 0.5s;
+  }
+
+  &:hover &__caption {
+    opacity: 1;
+    transform: translateY(-50%);
   }
 }
