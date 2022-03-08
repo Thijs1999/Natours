@@ -22,6 +22,12 @@
       transform: scale(1.05) translateY(-0.5rem);
       box-shadow: $shadow-5;
       z-index: 2;
+
+      @include respond(tab-port) {
+        outline: 0.5rem solid $color-primary;
+        transform: scale(2) translateY(-0.5rem);
+        z-index: 12;
+      }
     }
 
     &--p1 {

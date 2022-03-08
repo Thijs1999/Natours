@@ -2,14 +2,13 @@
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
-  height: 50rem;
+  height: 52rem;
 
   &__side {
-    height: 50rem;
+    height: 52rem;
     transition: all 0.8s ease;
     position: absolute;
 
-    height: 50rem;
     top: 0;
     left: 0;
     width: 100%;
@@ -24,7 +23,6 @@
 
     &--back {
       position: relative;
-      opacity: 0;
       transform: rotateY(180deg);
 
       &-1 {
@@ -55,12 +53,10 @@
 
   &:hover &__side--front {
     transform: rotateY(-180deg);
-    opacity: 0;
   }
 
   &:hover &__side--back {
     transform: rotateY(0);
-    opacity: 1;
   }
 
   //Front side styling
@@ -76,7 +72,7 @@
           $color-secondary-light,
           $color-secondary-dark
         ),
-        url("../img/nat-5.jpg");
+        url('../img/nat-5.jpg');
     }
 
     &--2 {
@@ -85,7 +81,7 @@
           $color-primary-light,
           $color-primary-dark
         ),
-        url("../img/nat-6.jpg");
+        url('../img/nat-6.jpg');
     }
 
     &--3 {
@@ -94,7 +90,7 @@
           $color-tertiary-light,
           $color-tertiary-dark
         ),
-        url("../img/nat-7.jpg");
+        url('../img/nat-7.jpg');
     }
   }
 
@@ -179,5 +175,58 @@
   &__price-value {
     font-size: 6rem;
     font-weight: 100;
+  }
+
+  @include respond(tab-port) {
+    height: auto;
+    border-radius: $border-radius;
+    background-color: $color-white;
+    box-shadow: $shadow-1;
+
+    &__side {
+      height: auto;
+      position: relative;
+      opacity: 1;
+      box-shadow: none;
+
+      &--back {
+        opacity: 1;
+        transform: rotateY(0);
+        clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+      }
+    }
+
+    &:hover &__side--front {
+      transform: rotateY(0);
+    }
+
+    &__details {
+      padding: 1rem 3rem;
+    }
+
+    &__cta {
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: translate(0);
+      width: 100%;
+      padding: 7rem 4rem 4rem 4rem;
+
+      padding: 4rem;
+    }
+
+    &:hover &__cta {
+      width: 100%;
+      text-align: center;
+      position: relative;
+    }
+
+    &__price-box {
+      margin-bottom: 3rem;
+    }
+
+    &__price-value {
+      font-size: 4rem;
+    }
   }
 }
